@@ -11,29 +11,30 @@ export default class HomeScene extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.logo}>Food But</Text>
-
-          <TextInput placeholder="Type performance name here"
-            placeholderTextColor="#90A4AE"
-            style={styles.inputBox} onChangeText={this._findEvents.bind(this)}>
+        <Text style={styles.logo}>Food Buzz</Text>
+          <TextInput placeholder="Find Event"
+             onChangeText={this._findEvents.bind(this)}>
           </TextInput>
-
-          <Button text={'I need help'} press={this._navigateToGetHelp.bind(this)}/>
-          <Button text={'Find By Location'} press={this._getLocation.bind(this)}/>
+          <Button text={'Find By Location'} press={this._findEventsNearUser.bind(this)}/>
           <Text style={styles.tagline}>Got insurance problems?</Text>
           <Text style={styles.tagline}>Connect with someone for help!</Text>
       </View>
     )
   }
   _findEvents () {
-    //get events that match name
+    
   }
-  _getLocation () {
-    fetch("https://api.seatgeek.com/2/events?geoip=true&range=25mi")
+  _findEventsNearUser () {
+    var start = moment().format();
+    var end = start.slice(0,11) + "23:59:59";
+    let url = "https://api.seatgeek.com/2/events?geoip=true&range=50mi&datetime_local.gte=" + start + "&datetime_local.lte=" + end;
+    fetch(url)
     .then(response => response.text())
     .then(response => {
-      console.log(Date.now(), moment().format());
-      // console.log(response)
+      console.log(response)
+      this.props.navigator.push({
+      ident: "ResultList"
+      })
     }).catch(err => console.log(err));
   } 
   _navigateToHelp(){
