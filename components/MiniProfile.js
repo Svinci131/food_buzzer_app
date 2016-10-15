@@ -20,7 +20,6 @@ class MiniProfile extends Component {
   render () {
     return (
       <View style={styles.profileComp}>
-
         <View style={styles.imgView} >
           <Image style={{width: 90, height: 90}} source={{uri:this.props.photoUrl}}></Image>
         </View>
@@ -28,9 +27,8 @@ class MiniProfile extends Component {
         <View style={styles.userDetails}>
           <Text style={styles.listTitle}>{this.props.title}</Text>
           <Text style={styles.listText}>{this.props.venue}</Text>
-          <Text style={styles.listText}>{this.props.address}</Text>
+          <Text style={styles.listText}>{this.props.city}</Text>
           <Text style={styles.listText}>{this.props.date}</Text>
-      
         </View>
         </TouchableOpacity>
       </View>
@@ -48,9 +46,9 @@ class MiniProfile extends Component {
 
 MiniProfile.propTypes = {
   title : PropTypes.string.isRequired,
-  venue: PropTypes.string.isRequired,
-  address : PropTypes.string,
-  date: PropTypes.string.isRequired,
+  venue: PropTypes.string,
+  city : PropTypes.string,
+  date: PropTypes.string,
   photoUrl : PropTypes.string
 }
 

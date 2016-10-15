@@ -14,7 +14,7 @@ export default class RestaurantList extends Component {
       businesses: []
     };
   }
-  componentDidMount() {
+  componentWillMount() {
     const lat = Store.event.venue.location.lat;
     const lon = Store.event.venue.location.lon;
     const yelpUrl = 'http://localhost:1337/?ll=' + lat + ", " + lon;
@@ -23,9 +23,15 @@ export default class RestaurantList extends Component {
      .then(res => {
       let businesses = JSON.parse(res).businesses;
       console.log('businesses', businesses)
+
       if (businesses.length > 0) {
+        console.log('has businesses', Array.isArray(businesses))
+        let hasMenuBis = businesses.filter((bis) => {
+          return !!bis.menu_provider;
+        })
+        console.log('hasMenuBis', hasMenuBis)
         this.setState({
-          businesses: businesses
+          businesses: hasMenuBis
         });
       } else {
         this.setState({
@@ -44,15 +50,14 @@ export default class RestaurantList extends Component {
     )
   }
   _businesses () {
+    let defaultImgUrl = "https://www.iconexperience.com/_img/g_collection_png/standard/512x512/hamburger.png";
     if (this.state.businesses.length) {
-      return this.state.businesses.map((businesses, idx) => { 
+      return this.state.businesses.map((business, idx) => { 
         return (
           <MiniProfile key={idx}
-            title={event.title} 
-            venue={event.venue.name} 
-            address={event.venue.city} 
-            date={event.datetime_local}
-            photoUrl={event.performers[0].image || defaultImgUrl} >
+            title={business.name} 
+            city={business.location.city} 
+            photoUrl={business.image_url || defaultImgUrl} >
           </MiniProfile>) 
       })
     } else {

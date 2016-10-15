@@ -23,7 +23,6 @@ pipeline.use(function(req, res, next){
 pipeline.use(express.static(__dirname +"/public"));
 
 pipeline.get('/', function(req, res) {
-	console.log('req', req);
 	var yelp = require("node-yelp"); 
 
 	var client = yelp.createClient({
@@ -39,17 +38,22 @@ pipeline.get('/', function(req, res) {
 	  }
 	});
 	 
-	 
-	client.search({
-	  term: "food",
-	  ll: req.query.ll
-	}).then(function (data) {
-		console.log("data", data)
-	  var businesses = data.businesses;
-	  var location = data.region; 
-	  res.send(data);
-	})
-	.catch(err => console.log(err));
+	if (req.query.ll) {
+		client.search({
+		  term: "food",
+		  ll: req.query.ll
+		}).then(function (data) {
+			console.log("data", data)
+		  var businesses = data.businesses;
+		  var location = data.region; 
+		  res.send(data);
+		})
+		.catch(err => console.log(err));
+	}
+	else {
+		res.send("rp");
+	}
+
 });
 
 

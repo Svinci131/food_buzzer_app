@@ -60,13 +60,19 @@ export default class HomeScene extends Component {
     let defaultImgUrl = "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1456158852/wmdzu9admd7p9y2n2b6z.png";
     if (this.state.events.length) {
       return this.state.events.map((event, idx) => { 
+        let obj = {
+            title: event.title,
+            venue: event.venue.name,
+            address: event.venue.city, 
+            date: event.datetime_local
+        }
         return (
           <MiniProfile 
             navigator={this.props.navigator}
             key={idx}
             title={event.title} 
             venue={event.venue.name} 
-            address={event.venue.city} 
+            city={event.venue.city} 
             date={event.datetime_local}
             next={"RestaurantList"}
             photoUrl={event.performers[0].image || defaultImgUrl} 
@@ -75,7 +81,7 @@ export default class HomeScene extends Component {
       })
     } 
     else {
-      return <Text>loading</Text>
+      return <Text style={styles.loading}>loading</Text>
     }
   }
   _findEvents () {
@@ -88,7 +94,6 @@ export default class HomeScene extends Component {
     fetch(url)
     .then(response => response.text())
     .then(response => {
-      console.log(response)
       this.props.navigator.push({
       ident: "ResultList"
       })

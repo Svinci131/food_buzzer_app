@@ -30,7 +30,6 @@ const stylesObj = {
         fontSize: 20,
         fontWeight: 'bold',
         color: medGreen
-
     },
     help: {
         backgroundColor: medGreen,
@@ -49,6 +48,12 @@ const stylesObj = {
         color: 'white',
         textAlign: 'center'
     }, 
+    loading: {
+        color: 'white',
+        fontSize: 30,
+        textAlign: 'center'
+
+    },
     listText: {
         color: 'white',
         textAlign: 'center',
