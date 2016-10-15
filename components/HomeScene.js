@@ -42,18 +42,17 @@ export default class HomeScene extends Component {
       }
     }).catch(err => console.log(err));
   }
+
+    // <TextInput placeholder="Find Event"
+    //          onChangeText={this._findEvents.bind(this)}>
+    //       </TextInput>
   render() {
     return (
       <View>
         <Text style={styles.logo}>Food Buzz</Text>
-          <TextInput placeholder="Find Event"
-             onChangeText={this._findEvents.bind(this)}>
-          </TextInput>
-
            <View>{ this._events() }</View>
 
-          <Text style={styles.tagline}>Got insurance problems?</Text>
-          <Text style={styles.tagline}>Connect with someone for help!</Text>
+          <Text style={styles.tagline}>What's the buzz about?</Text>
       </View>
     )
   }
@@ -83,7 +82,7 @@ export default class HomeScene extends Component {
       })
     } 
     else {
-      return <Text style={styles.loading}>loading</Text>
+      return <Text style={styles.loading}>loading ...</Text>
     }
   }
 

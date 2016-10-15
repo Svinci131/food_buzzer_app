@@ -63,10 +63,10 @@ const stylesObj = {
 
     },
     listText: {
-        backgroundColor: '#fff',
-        color: medGreen,
-        // textAlign: 'center',
-        padding: 6,
+        // backgroundColor: '#fff',
+        color: "#fff",
+        // textAlign: 'center
+        //padding: 6,
         margin: 2,
         alignSelf: 'flex-start',
         width: 200,

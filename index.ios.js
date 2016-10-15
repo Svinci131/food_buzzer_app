@@ -2,9 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { Navigator, Text, View, StyleSheet, AppRegistry } from 'react-native';
 import HomeScene from './components/HomeScene';
 
-import GetHelp from "./components/GetHelp";
-import OptionList from "./components/OptionList";
-import ResultList from './components/ResultList';
 
 import RestaurantList from './components/RestaurantList';
 import GetHelp from "./components/GetHelp";
@@ -98,7 +95,7 @@ export default class NavigationApp extends Component {
   render() {
     return (
       <Navigator
-        initialRoute={{ ident: 'OrderSummary' }}
+        initialRoute={{ ident: 'Home' }}
         renderScene={this._renderScene}
         configureScene={(route) => ({
           ...route.sceneConfig || Navigator.SceneConfigs.FloatFromRight })}
