@@ -50,14 +50,17 @@ export default class RestaurantList extends Component {
     )
   }
   _businesses () {
+    console.log(this.props);
     let defaultImgUrl = "https://www.iconexperience.com/_img/g_collection_png/standard/512x512/hamburger.png";
     if (this.state.businesses.length) {
       return this.state.businesses.map((business, idx) => { 
         return (
           <MiniProfile key={idx}
+            navigator={this.props.navigator}
             title={business.name} 
             city={business.location.city} 
             photoUrl={business.image_url || defaultImgUrl} >
+            next={"OrderSummary"}
           </MiniProfile>) 
       })
     } else {

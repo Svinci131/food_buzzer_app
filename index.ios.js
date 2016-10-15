@@ -32,27 +32,11 @@ export default class NavigationApp extends Component {
             />
             </View>
           )
-      case "ProvideHelp":
-        return (
-          <SignIn {...globalNavigatorProps}/>
-          )
       case "RestaurantList":
         return (
         <View style={styles.body}>
           <RestaurantList {...globalNavigatorProps}/>
           </View>
-        )
-      case "Insurance":
-        return (
-          <OptionList cat="insurance" {...globalNavigatorProps}/>
-        )
-      case "Location":
-        return (
-          <OptionList cat="locations" {...globalNavigatorProps}/>
-        )
-      case "Problems":
-        return (
-          <OptionList cat="problems" {...globalNavigatorProps}/>
         )
       case "SignIn":
         return (
@@ -62,15 +46,6 @@ export default class NavigationApp extends Component {
           return (
               <Input btnType="Sign Up" {...globalNavigatorProps}/>
           )
-      case "SingleProfile":
-        return (
-            <ProfileDetail {...globalNavigatorProps}/>
-        )
-        case "Message":
-          return (
-              <TextArea {...globalNavigatorProps}/>
-          )
-
         case "OrderSummary":
           return (
               <OrderSummary {...globalNavigatorProps}/>

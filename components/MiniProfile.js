@@ -38,10 +38,15 @@ class MiniProfile extends Component {
   goToNext(){
     if (this.props.next === "RestaurantList") {
       Store.event = this.props.event;
+       this.props.navigator.push({
+        ident: this.props.next
+      })
     }
-    this.props.navigator.push({
-      ident: this.props.next
-    })
+    else {
+      this.props.navigator.push({
+        ident: "OrderSummary"
+      })
+    }
   }
 }
 
