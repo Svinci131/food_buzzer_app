@@ -27,7 +27,7 @@ class MiniProfile extends Component {
         <TouchableOpacity onPress={this.goToNext.bind(this)}>
         <View style={styles.userDetails}>
           <Text style={styles.listTitle}>{this.props.title}</Text>
-          <Text style={styles.listText}>{this.props.venue}</Text>
+          {this.props.venue ? <Text style={styles.listText}>{this.props.venue}</Text> : null }
           <Text style={styles.listText}>{this.props.city}</Text>
           <Text style={styles.listText}>{this.props.date}</Text>
         </View>
