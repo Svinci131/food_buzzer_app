@@ -1,23 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { Navigator, Text, View, StyleSheet, AppRegistry } from 'react-native';
 import HomeScene from './components/HomeScene';
-
-
 import RestaurantList from './components/RestaurantList';
-import GetHelp from "./components/GetHelp";
-import OptionList from "./components/OptionList";
-
 import SignIn from "./components/SignIn";
 import Input from "./components/Input";
-import ProfileDetail from "./components/ProfileDetail";
 import TextArea from "./components/TextArea";
-
 import Checkout from "./components/Checkout";
 import Success from './components/Success';
 import OrderSummary from "./components/OrderSummary";
-
-
 import { stylesObj } from './styles';
+
 const styles = StyleSheet.create(stylesObj);
 
 
@@ -38,28 +30,20 @@ export default class NavigationApp extends Component {
           <RestaurantList {...globalNavigatorProps}/>
           </View>
         )
-      case "SignIn":
+      case "OrderSummary":
         return (
-            <Input btnType="Sign In" {...globalNavigatorProps}/>
-        )
-        case "SignUp":
-          return (
-              <Input btnType="Sign Up" {...globalNavigatorProps}/>
+            <OrderSummary {...globalNavigatorProps}/>
           )
-        case "OrderSummary":
-          return (
-              <OrderSummary {...globalNavigatorProps}/>
-            )
 
-        case "Checkout":
-          return (
-              <Checkout {...globalNavigatorProps}/>
-            )
+      case "Checkout":
+        return (
+            <Checkout {...globalNavigatorProps}/>
+          )
           
-        case "Success":
-          return (
-              <Success {...globalNavigatorProps}/>
-            )
+      case "Success":
+        return (
+            <Success {...globalNavigatorProps}/>
+          )
 
       default:
         return <Text>'!!Route Error!!'</Text>
