@@ -44,11 +44,15 @@ const stylesObj = {
         flex: 1,
         paddingTop: 50
     },
+    listTitle: {
+        fontWeight: 'bold',
+        color: 'white',
+        textAlign: 'center'
+    }, 
     listText: {
-        backgroundColor: 'white',
-        color: medGreen,
+        color: 'white',
         textAlign: 'center',
-        padding: 6,
+        padding: 1,
         margin: 2
     },
     tagline: {
