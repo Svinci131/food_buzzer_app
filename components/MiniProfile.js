@@ -6,7 +6,9 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import {stylesObj} from '../styles'
+import {stylesObj} from '../styles'; 
+import Store from '../store';
+
 const styles = StyleSheet.create(stylesObj);
 
 
@@ -22,7 +24,7 @@ class MiniProfile extends Component {
         <View style={styles.imgView} >
           <Image style={{width: 90, height: 90}} source={{uri:this.props.photoUrl}}></Image>
         </View>
-        <TouchableOpacity onPress={this.goToRestaurantList.bind(this, "je")}>
+        <TouchableOpacity onPress={this.goToNext.bind(this)}>
         <View style={styles.userDetails}>
           <Text style={styles.listTitle}>{this.props.title}</Text>
           <Text style={styles.listText}>{this.props.venue}</Text>
@@ -34,10 +36,12 @@ class MiniProfile extends Component {
       </View>
     )
   }
-  goToRestaurantList(user){
-    console.log("yo", user)
+  goToNext(){
+    if (this.props.next === "RestaurantList") {
+      Store.event = this.props.event;
+    }
     this.props.navigator.push({
-      ident: "RestaurantList"
+      ident: this.props.next
     })
   }
 }
