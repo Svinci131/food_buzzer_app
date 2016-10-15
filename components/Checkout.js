@@ -43,7 +43,7 @@ export default class Checkout extends Component {
                 </View>
                 <View style={styles.userInfo}>
                     <Text>Order Name</Text>
-                    <View style={styles.userInfo}>
+                    <View style={styles.userInfo2}>
                         <TextInput onChangeText={(orderName) => this.setState({orderName})} value={this.state.orderName} onFocus={() => this.updateText('onFocus')} style={styles.inputName}/>
                     </View>
                 </View>

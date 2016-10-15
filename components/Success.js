@@ -9,9 +9,9 @@ export default class Success extends Component {
     render() {
         return (
             <View style={styles.success}>
-                <Text>Congratulations,</Text>
-                <Text>Your Order Has Been</Text>
-                <Text>Successfully Submitted!</Text>
+                <Text style={{color: 'white'}}>Congratulations,</Text>
+                <Text style={{color: 'white'}}>Your Order Has Been</Text>
+                <Text style={{color: 'white'}}>Successfully Submitted!</Text>
             </View>
         )
     }

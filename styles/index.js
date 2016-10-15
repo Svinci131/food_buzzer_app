@@ -1,31 +1,30 @@
 // import { StyleSheet } from 'react-native';
-const darkGreen = '#01579B';
+const darkGreen = '#E86B18';
 const lightGreen = '#80DEEA';
-const medGreen = '#039BE5';
+const medGreen = "#082744";
 const inputBorder = '#EFEFEF';
-
-
 const stylesObj = {
     body: {
-        backgroundColor: medGreen,
         alignSelf: 'stretch',
         height: 5000,
     },
     smallHeader: {
         fontSize: 30,
-        color: 'white',
+        color: medGreen,
         textAlign: 'center',
         marginTop: 10,
     },
     logo: {
+        backgroundColor: inputBorder,
         fontSize: 40,
-        color: 'white',
+        height: 100,
+        color: medGreen,
         textAlign: 'center',
-        marginTop: 200,
+        paddingTop: 30,
         marginBottom: 10
     },
     button: {
-        backgroundColor: 'white',
+        backgroundColor: medGreen,
         marginBottom: 7,
         marginLeft: 30,
         padding: 10,
@@ -36,7 +35,7 @@ const stylesObj = {
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
-        color: medGreen
+        color: 'white'
     },
     help: {
         backgroundColor: medGreen,
@@ -45,7 +44,7 @@ const stylesObj = {
         paddingTop: 200
     },
     list: {
-        backgroundColor: medGreen,
+      
         alignSelf: 'stretch',
         flex: 1,
         paddingTop: 20,
@@ -53,18 +52,27 @@ const stylesObj = {
     },
     listTitle: {
         fontWeight: 'bold',
-        color: 'white',
-        textAlign: 'center'
+        color: medGreen,
     }, 
     loading: {
-        color: 'white',
+        color: medGreen,
         fontSize: 30,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: 50,
 
     },
     listText: {
         // backgroundColor: '#fff',
-        color: "#fff",
+        color: medGreen,
+        // textAlign: 'center
+        //padding: 6,
+        margin: 2,
+        alignSelf: 'flex-start',
+        width: 200,
+    },
+    listText2: {
+        // backgroundColor: '#fff',
+        color: medGreen,
         // textAlign: 'center
         //padding: 6,
         margin: 2,
@@ -72,30 +80,32 @@ const stylesObj = {
         width: 200,
     },
     tagline: {
-        color: 'white',
+        color: medGreen,
         textAlign: 'center'
     },
     profileComp: { flex: 1, flexDirection: 'row', margin:10, justifyContent: 'space-around'},
-    imgView: { width: 100, height: 100, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' },
+    imgView: { width: 100, height: 100, backgroundColor: medGreen, justifyContent: 'center', alignItems: 'center' },
     userDetails: { width: 250, height: 100, padding: 5},
     name: { fontSize: 20, fontWeight: 'bold', color: '#039BE5',marginLeft: 50},
     //headline: { fontSize: 16, marginVertical: 5, color: '#039BE5',marginLeft: 50},
     text: { fontSize: 12, color: '#039BE5',marginLeft: 50 },
 
-    headline3: {fontSize: 24, color: '#fff', textAlign: "center"},
-    headline1: { fontSize: 40, marginVertical: 30, color: '#fff', textAlign: "center"},
+    headline3: {fontSize: 24, color: medGreen, textAlign: "center", marginBottom: 30},
+    headline1: { fontSize: 40, marginVertical: 30, color: medGreen, textAlign: "center"},
     billing: {
        alignItems: 'center',
    },
    invoice: {
        width: 500, 
-       height: 60,
-       paddingTop: 20,
+       height: 100,
        justifyContent: 'center',
        alignItems: 'center',
-       backgroundColor: inputBorder,
+       backgroundColor: inputBorder
    },
    userInfo: {
+       marginTop: 30,
+   },
+   userInfo2: {
        marginTop: 5,
    },
    cardInfo: {
@@ -111,7 +121,8 @@ const stylesObj = {
    },
    expiration: {
        flexDirection: 'row',
-       marginTop: 5
+       marginTop: 5,
+       marginBottom: 15
    },
    inputNum: {
        height: 28,
@@ -131,7 +142,7 @@ const stylesObj = {
        borderWidth: 1,
        borderRadius: 3,
        backgroundColor: medGreen,
-       borderColor: 'white'
+       borderColor: medGreen,
    }
 }
 

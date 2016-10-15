@@ -32,9 +32,9 @@ export default class OrderList extends Component {
   //  getTotalPerItem(props.items);
     renderRow(profile) {
         return (
-		    <View style={{flex: 1, flexDirection: 'row'}}>
-		      			<Text style={styles.listText}>{profile.name}</Text>
-		                <Text style={styles.listText}>{profile.price} x {profile.quantity}</Text>
+		    <View style={{flex: 1, flexDirection: 'row', marginLeft: 20}}>
+		      			<Text style={styles.listText2}>{profile.name}</Text>
+		                <Text style={styles.listText2}>{profile.price} x {profile.quantity}</Text>
 		    </View>
         )
     }

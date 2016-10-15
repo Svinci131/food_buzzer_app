@@ -28,7 +28,7 @@ export default class OrderSummary extends Component {
         return (
         <View style={styles.body}>
             <View>
-                <Text style={styles.headline1}>Order Summary</Text>
+                <Text style={styles.logo}>Order Summary</Text>
                 <Order />
             </View>
             

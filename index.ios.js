@@ -27,10 +27,10 @@ export default class NavigationApp extends Component {
 
     switch(route.ident) {
       case "Home":
-        return ( <View style={styles.body}>
+        return ( 
             <HomeScene {...globalNavigatorProps}
             />
-            </View>
+        
           )
       case "RestaurantList":
         return (

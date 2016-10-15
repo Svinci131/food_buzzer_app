@@ -18,8 +18,8 @@ export default class Order extends Component {
 
         const fakeData = [
         	{
-        		name: 'Otto\'s Tacos', 
-        		order: [{name:"Fries", price:"$10.00", quantity:"3"}, {name:"Tacos", price:"$10.00", quantity:"4"}, {name:"Candy", price:"$10.00", quantity:"3"}, {name:"Soda", price:"$10.00", quantity:"4"}]
+        		name: 'Gotham West Market', 
+        		order: [{name:"Garlic Fries", price:"$10.00", quantity:"3"}, {name:"Fish Tacos", price:"$10.00", quantity:"4"}, {name:"Brownie Sundae", price:"$10.00", quantity:"3"}, {name:"Iced Tea", price:"$10.00", quantity:"4"}]
         	}
         ];
 
