@@ -63,7 +63,9 @@ export default class HomeScene extends Component {
       return this.state.events.map((event, idx) => { 
         console.log("_________", event)
         return (
-          <MiniProfile key={idx}
+          <MiniProfile 
+            navigator={this.props.navigator}
+            key={idx}
             title={event.title} 
             venue={event.venue.name} 
             address={event.venue.city} 

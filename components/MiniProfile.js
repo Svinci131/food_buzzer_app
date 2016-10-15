@@ -14,16 +14,15 @@ class MiniProfile extends Component {
     constructor(props){
         super(props)
     }
-    goToProfile(user){
-        console.log(user)
-    }
+
   render () {
-    console.log('in mini profile', this.props)
     return (
-      <View style={styles.profileComp} onPress={this.goToProfile.bind(this, this.props)}>
-        <View style={styles.imgView}>
+      <View style={styles.profileComp}>
+
+        <View style={styles.imgView} >
           <Image style={{width: 90, height: 90}} source={{uri:this.props.photoUrl}}></Image>
         </View>
+        <TouchableOpacity onPress={this.goToRestaurantList.bind(this, "je")}>
         <View style={styles.userDetails}>
           <Text style={styles.listTitle}>{this.props.title}</Text>
           <Text style={styles.listText}>{this.props.venue}</Text>
@@ -31,8 +30,15 @@ class MiniProfile extends Component {
           <Text style={styles.listText}>{this.props.date}</Text>
       
         </View>
+        </TouchableOpacity>
       </View>
     )
+  }
+  goToRestaurantList(user){
+    console.log("yo", user)
+    this.props.navigator.push({
+      ident: "RestaurantList"
+    })
   }
 }
 
