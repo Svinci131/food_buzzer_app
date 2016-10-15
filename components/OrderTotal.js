@@ -15,7 +15,7 @@ export default class Total extends Component {
     render() {
         return (
             <View>
-                <Text style={styles.headline1}>Total: $100.00</Text> 
+                <Text style={styles.headline1}>Total: $140.00</Text> 
             </View>
         )
     }
