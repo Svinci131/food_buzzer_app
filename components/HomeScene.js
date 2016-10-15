@@ -20,11 +20,23 @@ export default class HomeScene extends Component {
 
           <Button text={'I need help'} press={this._navigateToGetHelp.bind(this)}/>
           <Button text={'Find By Location'} press={this._getLocation.bind(this)}/>
+
+          <Button text="Order" press={this.signIn.bind(this, "Order")}></Button>
+
           <Text style={styles.tagline}>Got insurance problems?</Text>
           <Text style={styles.tagline}>Connect with someone for help!</Text>
       </View>
     )
   }
+
+      signIn(e){
+        console.log(e)
+        this.props.navigator.push({
+        ident: e
+        })
+    }
+
+
   _findEvents () {
     //get events that match name
   }

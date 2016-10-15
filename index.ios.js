@@ -1,15 +1,21 @@
 import React, { Component, PropTypes } from 'react';
 import { Navigator, Text, View, StyleSheet, AppRegistry } from 'react-native';
-import HomeScene from './components/HomeScene'
+import HomeScene from './components/HomeScene';
 import GetHelp from "./components/GetHelp";
 import OptionList from "./components/OptionList";
-import ResultList from './components/ResultList'
+import ResultList from './components/ResultList';
 import SignIn from "./components/SignIn";
 import Input from "./components/Input";
 import Results from './components/Results';
 import ProfileDetail from "./components/ProfileDetail";
 import TextArea from "./components/TextArea";
-import { stylesObj } from './styles'
+
+import Checkout from "./components/Checkout";
+import Success from './components/Success';
+import OrderSummary from "./components/OrderSummary";
+
+
+import { stylesObj } from './styles';
 const styles = StyleSheet.create(stylesObj);
 
 
@@ -68,6 +74,22 @@ export default class NavigationApp extends Component {
           return (
               <TextArea {...globalNavigatorProps}/>
           )
+
+        case "OrderSummary":
+          return (
+              <OrderSummary {...globalNavigatorProps}/>
+            )
+
+        case "Checkout":
+          return (
+              <Checkout {...globalNavigatorProps}/>
+            )
+          
+        case "Success":
+          return (
+              <Success {...globalNavigatorProps}/>
+            )
+
       default:
         return <Text>'!!Route Error!!'</Text>
     }
@@ -77,7 +99,7 @@ export default class NavigationApp extends Component {
   render() {
     return (
       <Navigator
-        initialRoute={{ ident: 'Home' }}
+        initialRoute={{ ident: 'OrderSummary' }}
         renderScene={this._renderScene}
         configureScene={(route) => ({
           ...route.sceneConfig || Navigator.SceneConfigs.FloatFromRight })}
