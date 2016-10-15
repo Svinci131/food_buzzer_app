@@ -18,6 +18,7 @@ class MiniProfile extends Component {
     }
 
   render () {
+    console.log(this.props);
     return (
       <View style={styles.profileComp}>
         <View style={styles.imgView} >

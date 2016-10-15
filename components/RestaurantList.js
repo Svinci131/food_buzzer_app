@@ -44,7 +44,7 @@ export default class RestaurantList extends Component {
   render() {
     return (
       <View>
-        <Text>Food near your Venue/Area:</Text>
+        <Text style={styles.smallHeader}>Food near your Venue/Area:</Text>
          <View>{ this._businesses() }</View>
       </View>
     )

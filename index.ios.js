@@ -29,7 +29,9 @@ export default class NavigationApp extends Component {
           )
       case "RestaurantList":
         return (
+        <View style={styles.body}>
           <RestaurantList {...globalNavigatorProps}/>
+          </View>
         )
       case "Insurance":
         return (

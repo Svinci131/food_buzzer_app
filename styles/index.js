@@ -10,6 +10,12 @@ const stylesObj = {
         alignSelf: 'stretch',
         height: 5000,
     },
+    smallHeader: {
+        fontSize: 30,
+        color: 'white',
+        textAlign: 'center',
+        marginTop: 10,
+    },
     logo: {
         fontSize: 40,
         color: 'white',
