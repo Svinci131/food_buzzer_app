@@ -11,6 +11,12 @@ const stylesObj = {
         alignSelf: 'stretch',
         height: 5000,
     },
+    smallHeader: {
+        fontSize: 30,
+        color: 'white',
+        textAlign: 'center',
+        marginTop: 10,
+    },
     logo: {
         fontSize: 40,
         color: 'white',
@@ -44,6 +50,17 @@ const stylesObj = {
         flex: 1,
         paddingTop: 20,
         paddingBottom: 30
+    },
+    listTitle: {
+        fontWeight: 'bold',
+        color: 'white',
+        textAlign: 'center'
+    }, 
+    loading: {
+        color: 'white',
+        fontSize: 30,
+        textAlign: 'center'
+
     },
     listText: {
         backgroundColor: '#fff',

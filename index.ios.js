@@ -1,12 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import { Navigator, Text, View, StyleSheet, AppRegistry } from 'react-native';
 import HomeScene from './components/HomeScene';
+
 import GetHelp from "./components/GetHelp";
 import OptionList from "./components/OptionList";
 import ResultList from './components/ResultList';
+
+import RestaurantList from './components/RestaurantList';
+import GetHelp from "./components/GetHelp";
+import OptionList from "./components/OptionList";
+
 import SignIn from "./components/SignIn";
 import Input from "./components/Input";
-import Results from './components/Results';
 import ProfileDetail from "./components/ProfileDetail";
 import TextArea from "./components/TextArea";
 
@@ -22,7 +27,7 @@ const styles = StyleSheet.create(stylesObj);
 export default class NavigationApp extends Component {
   _renderScene(route, navigator){
     var globalNavigatorProps = {navigator}
-    
+
     switch(route.ident) {
       case "Home":
         return ( <View style={styles.body}>
@@ -34,9 +39,11 @@ export default class NavigationApp extends Component {
         return (
           <SignIn {...globalNavigatorProps}/>
           )
-      case "GetHelp":
+      case "RestaurantList":
         return (
-          <GetHelp {...globalNavigatorProps}/>
+        <View style={styles.body}>
+          <RestaurantList {...globalNavigatorProps}/>
+          </View>
         )
       case "Insurance":
         return (
@@ -50,10 +57,6 @@ export default class NavigationApp extends Component {
         return (
           <OptionList cat="problems" {...globalNavigatorProps}/>
         )
-      case "Browse":
-        return (
-          <ResultList/>
-        )
       case "SignIn":
         return (
             <Input btnType="Sign In" {...globalNavigatorProps}/>
@@ -62,10 +65,6 @@ export default class NavigationApp extends Component {
           return (
               <Input btnType="Sign Up" {...globalNavigatorProps}/>
           )
-        case 'Results':
-          return(
-            <Results {...globalNavigatorProps}/>
-            )
       case "SingleProfile":
         return (
             <ProfileDetail {...globalNavigatorProps}/>

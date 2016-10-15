@@ -6,7 +6,9 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import {stylesObj} from '../styles'
+import {stylesObj} from '../styles'; 
+import Store from '../store';
+
 const styles = StyleSheet.create(stylesObj);
 
 
@@ -14,37 +16,41 @@ class MiniProfile extends Component {
     constructor(props){
         super(props)
     }
-    goToProfile(user){
-        console.log(user)
-    }
+
   render () {
-    console.log('in mini profile', this.props)
+    console.log(this.props);
     return (
-      <View style={styles.profileComp} onPress={this.goToProfile.bind(this, this.props)}>
-        <View style={styles.imgView}>
-          <Image style={{width: 90, height: 90}} source={{uri:this.props.profile_picture}}></Image>
+      <View style={styles.profileComp}>
+        <View style={styles.imgView} >
+          <Image style={{width: 90, height: 90}} source={{uri:this.props.photoUrl}}></Image>
         </View>
+        <TouchableOpacity onPress={this.goToNext.bind(this)}>
         <View style={styles.userDetails}>
-          <Text style={styles.name}>{this.props.username}</Text>
-          <Text style={styles.headline}>{this.props.title}</Text>
-          <Text style={styles.text}>{this.props.story.slice(0, 100)+"..."}</Text>
-          <Text style={styles.text}>{this.props.problems}</Text>
-          <TouchableOpacity onPress={()=>console.log('pressed')}>
-          <Text style={{color: '#039BE5', backgroundColor: 'white', padding: 2, textAlign: 'center', marginTop: 1}}>
-            MESSAGE
-          </Text>
-        </TouchableOpacity>
+          <Text style={styles.listTitle}>{this.props.title}</Text>
+          <Text style={styles.listText}>{this.props.venue}</Text>
+          <Text style={styles.listText}>{this.props.city}</Text>
+          <Text style={styles.listText}>{this.props.date}</Text>
         </View>
+        </TouchableOpacity>
       </View>
     )
+  }
+  goToNext(){
+    if (this.props.next === "RestaurantList") {
+      Store.event = this.props.event;
+    }
+    this.props.navigator.push({
+      ident: this.props.next
+    })
   }
 }
 
 MiniProfile.propTypes = {
-  username : PropTypes.string.isRequired,
   title : PropTypes.string.isRequired,
-  story : PropTypes.string,
-  problems : PropTypes.string,
+  venue: PropTypes.string,
+  city : PropTypes.string,
+  date: PropTypes.string,
+  photoUrl : PropTypes.string
 }
 
 // var styles =  StyleSheet.create({
