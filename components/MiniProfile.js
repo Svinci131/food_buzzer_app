@@ -6,7 +6,9 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import {stylesObj} from '../styles'
+import {stylesObj} from '../styles'; 
+import Store from '../store';
+
 const styles = StyleSheet.create(stylesObj);
 
 
@@ -14,16 +16,15 @@ class MiniProfile extends Component {
     constructor(props){
         super(props)
     }
-    goToProfile(user){
-        console.log(user)
-    }
+
   render () {
-    console.log('in mini profile', this.props)
     return (
-      <View style={styles.profileComp} onPress={this.goToProfile.bind(this, this.props)}>
-        <View style={styles.imgView}>
+      <View style={styles.profileComp}>
+
+        <View style={styles.imgView} >
           <Image style={{width: 90, height: 90}} source={{uri:this.props.photoUrl}}></Image>
         </View>
+        <TouchableOpacity onPress={this.goToNext.bind(this)}>
         <View style={styles.userDetails}>
           <Text style={styles.listTitle}>{this.props.title}</Text>
           <Text style={styles.listText}>{this.props.venue}</Text>
@@ -31,8 +32,17 @@ class MiniProfile extends Component {
           <Text style={styles.listText}>{this.props.date}</Text>
       
         </View>
+        </TouchableOpacity>
       </View>
     )
+  }
+  goToNext(){
+    if (this.props.next === "RestaurantList") {
+      Store.event = this.props.event;
+    }
+    this.props.navigator.push({
+      ident: this.props.next
+    })
   }
 }
 
