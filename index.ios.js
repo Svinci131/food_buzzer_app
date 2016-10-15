@@ -16,8 +16,7 @@ const styles = StyleSheet.create(stylesObj);
 export default class NavigationApp extends Component {
   _renderScene(route, navigator){
     var globalNavigatorProps = {navigator}
-
-    console.log(route)
+    
     switch(route.ident) {
       case "Home":
         return ( <View style={styles.body}>
